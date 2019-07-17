@@ -1,0 +1,9 @@
+.header{
+    text-align : center;
+   padding : 20;
+   background : #000;
+   color: #fff;
+   text-transform: 'uppercase';
+   height: 50px;
+   font-size: 40px;
+}

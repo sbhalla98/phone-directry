@@ -33,15 +33,27 @@ class Main extends Component{
   }
   subscriber.push(newSubscriber);
   this.setState({subscriberList : subscriber});
-  console.log("main page");
-  console.log(this.state.subscriberList);
+ }
+
+
+ deleteSubscriberHandler = (subID)=>{
+    let Subscriber = this.state.subscriberList;
+    let subscriberid = 0;
+    Subscriber.forEach(function(subscriber,index){
+      if(subscriber.id == subID){
+        subscriberid = index;
+      }
+    },this);
+    let newSubscriber = Subscriber;
+    newSubscriber.splice(subscriberid,1);
+    this.setState({subscriberList:newSubscriber});
  }
 
 render() {
   return (
     <Router>
   <div>
-  <Route exact path="/" render={ (props) => <SubscriberToShow {...props} subscriberList={this.state.subscriberList} />}  />
+  <Route exact path="/" render={ (props) => <SubscriberToShow {...props} subscriberList={this.state.subscriberList} deleteSubscriberHandler={this.deleteSubscriberHandler}/>}  />
   <Route exact path="/add" render={ ({history},props) => <AddSubscriber history={history}{...props} addSubscriberHandler={this.addSubscriberHandler} />} />
   </div>
   </Router>

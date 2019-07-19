@@ -3,22 +3,10 @@ import Header from './Header.js'
 import './SubscriberToShow.css';
 import {Link} from 'react-router-dom';
 class Subscriber extends Component{
-//   constructor(){
-//     super();
-//   this.state ={
-//       subscriberListToShow :[]
-//   }
-// }
-// componentDidMount(){
-//   let newSubscriber ={
-//     key:1,
-//     name:"sonali",
-//     phone:"9569545786"
-//   }
-//   let Subscriber = this.state.subscriberListToShow;
-//   Subscriber.push(newSubscriber);
-//   this.setState({subscriberListToShow : Subscriber});
-// }
+
+onDeletedClick = (subID) => {
+  this.props.deleteSubscriberHandler(subID);
+}
 render() {
   return (
     <div>
@@ -34,7 +22,7 @@ render() {
       return <div style={{position:'relative',top:'50px',left:'30px',fontWeight:'bolder'}} key={arrayElement.id}  className="row">
       	<div className="col-lg-2">{arrayElement.name}</div>
         <div className="col-lg-2">{arrayElement.phone}</div>
-       <div className="col-lg-8" style={{marginTop:'1px'}}><button className="delete-btn">DELETE</button></div>
+       <div className="col-lg-8" style={{marginTop:'1px'}}><button className="delete-btn" onClick={this.onDeletedClick.bind(this,arrayElement.id)}>DELETE</button></div>
       </div>
       })
       }

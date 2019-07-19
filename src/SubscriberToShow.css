@@ -1,7 +1,17 @@
-#add-btn{
+.add-btn{
 
     background-color: #7ab97a;
 
+}
+.grey-btn{
+    background-color: grey;
+}
+.custom-btn{
+    padding:10px;
+    width:100px;
+    color: #f0f8ff;
+    text-transform: uppercase;
+    border-radius:5px;
 }
 .btn{
     padding:10px;
@@ -10,7 +20,7 @@
     text-transform: uppercase;
     position: relative;
     top:20px;
-    left:20px;
+    left:10px;
 }
 .label{
     position: relative;
@@ -30,4 +40,13 @@
    border-radius: 5px;
     background-color: red;
     font-size:15px;
+}
+.component-container{
+    border : 1px solid #ccc;
+    position:relative;
+    left:35%;
+    margin-top:4%;
+    width:30%;
+    padding:4%;
+    box-shadow: 0 4px 8px 0 rgba(200,200 ,200 , 0.2), 0 6px 20px 0 rgba(200,200,200, 0.19);
 }
